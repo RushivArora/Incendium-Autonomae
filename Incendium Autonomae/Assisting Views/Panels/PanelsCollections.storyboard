@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="ipad10_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Panels Collections View Controller-->
+        <scene sceneID="f0X-SL-eHT">
+            <objects>
+                <viewController storyboardIdentifier="UIPanelsMainID" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vDN-Cw-tgG" customClass="PanelsCollectionsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VXR-iQ-mt2"/>
+                        <viewControllerLayoutGuide type="bottom" id="WuO-ME-0V4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ef5-kH-7cW">
+                        <rect key="frame" x="0.0" y="0.0" width="1180" height="820"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HVG-df-LH9">
+                                <rect key="frame" x="20" y="51" width="431" height="739"/>
+                                <connections>
+                                    <segue destination="8GL-eS-n6C" kind="embed" id="7vl-ZW-56l"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vhx-tj-9Rg">
+                                <rect key="frame" x="461" y="51" width="344.5" height="739"/>
+                                <connections>
+                                    <segue destination="HMY-9c-hab" kind="embed" id="536-qu-YQs"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fja-10-JwI">
+                                <rect key="frame" x="19" y="20" width="1307" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="900" constant="45" id="xJa-9I-shc"/>
+                                </constraints>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMP-bo-6pO">
+                                <rect key="frame" x="815.5" y="51" width="344.5" height="739"/>
+                                <connections>
+                                    <segue destination="TZX-tx-nKZ" kind="embed" id="ncZ-3G-5pG"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JEZ-pW-rbJ"/>
+                        <color key="backgroundColor" red="0.076183750179999996" green="0.077627680690000006" blue="0.077963082899999994" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="HVG-df-LH9" firstAttribute="width" secondItem="Vhx-tj-9Rg" secondAttribute="width" multiplier="1.25" priority="999" id="4UU-GQ-lUW"/>
+                            <constraint firstItem="WuO-ME-0V4" firstAttribute="top" secondItem="Vhx-tj-9Rg" secondAttribute="bottom" constant="10" id="JYW-Lc-IaJ"/>
+                            <constraint firstItem="Vhx-tj-9Rg" firstAttribute="leading" secondItem="HVG-df-LH9" secondAttribute="trailing" constant="10" id="K8U-co-XVr"/>
+                            <constraint firstItem="WuO-ME-0V4" firstAttribute="top" secondItem="HVG-df-LH9" secondAttribute="bottom" constant="10" id="OvF-C2-ubc"/>
+                            <constraint firstItem="Vhx-tj-9Rg" firstAttribute="width" secondItem="hMP-bo-6pO" secondAttribute="width" priority="999" id="WjJ-t1-hrL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hMP-bo-6pO" secondAttribute="trailing" id="Zxs-86-oNt"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="HVG-df-LH9" secondAttribute="leading" id="cP4-3b-2qd"/>
+                            <constraint firstItem="hMP-bo-6pO" firstAttribute="top" secondItem="fja-10-JwI" secondAttribute="bottom" constant="6" id="dC1-PH-VbL"/>
+                            <constraint firstItem="Vhx-tj-9Rg" firstAttribute="top" secondItem="fja-10-JwI" secondAttribute="bottom" constant="6" id="dxo-Bf-jsg"/>
+                            <constraint firstItem="fja-10-JwI" firstAttribute="top" secondItem="VXR-iQ-mt2" secondAttribute="bottom" id="eZU-Al-jtF"/>
+                            <constraint firstItem="WuO-ME-0V4" firstAttribute="top" relation="lessThanOrEqual" secondItem="fja-10-JwI" secondAttribute="bottom" priority="999" constant="939" id="g6h-fh-xgY"/>
+                            <constraint firstItem="HVG-df-LH9" firstAttribute="top" secondItem="fja-10-JwI" secondAttribute="bottom" constant="6" id="hAU-5Z-bTf"/>
+                            <constraint firstItem="hMP-bo-6pO" firstAttribute="leading" secondItem="Vhx-tj-9Rg" secondAttribute="trailing" constant="10" id="hzO-vh-W4d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fja-10-JwI" secondAttribute="trailing" id="rMN-Fu-5db"/>
+                            <constraint firstItem="fja-10-JwI" firstAttribute="leading" secondItem="Ef5-kH-7cW" secondAttribute="leadingMargin" id="uL5-Hb-DWD"/>
+                            <constraint firstItem="WuO-ME-0V4" firstAttribute="top" secondItem="hMP-bo-6pO" secondAttribute="bottom" constant="10" id="wfN-32-aAo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="statusBarContainingView" destination="fja-10-JwI" id="Wst-Jo-Y8I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jvk-8Q-Z08" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="61.525423728813564" y="814.39024390243901"/>
+        </scene>
+        <!--Preflight Checklist Controller-->
+        <scene sceneID="JUw-cf-TJ3">
+            <objects>
+                <viewController id="8GL-eS-n6C" customClass="DUXPreflightChecklistController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PFT-hp-G6J"/>
+                        <viewControllerLayoutGuide type="bottom" id="ohW-RA-JUR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oLF-bE-NqI">
+                        <rect key="frame" x="0.0" y="0.0" width="431" height="739"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="R4q-kl-WKN"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eeK-CP-9Rm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="594" y="1521"/>
+        </scene>
+        <!--Camera Settings Controller-->
+        <scene sceneID="R4J-ZZ-GR4">
+            <objects>
+                <viewController id="HMY-9c-hab" customClass="DUXCameraSettingsController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PvI-TU-XA7"/>
+                        <viewControllerLayoutGuide type="bottom" id="0hg-IG-jMy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P7u-c0-cZ8">
+                        <rect key="frame" x="0.0" y="0.0" width="344.5" height="739"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8ql-Gf-Ko3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tg3-ok-Z1M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="595" y="777"/>
+        </scene>
+        <!--Exposure Settings Controller-->
+        <scene sceneID="JZ8-yL-0sy">
+            <objects>
+                <viewController id="TZX-tx-nKZ" customClass="DUXExposureSettingsController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ba2-uO-PH5"/>
+                        <viewControllerLayoutGuide type="bottom" id="zDb-76-EaD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZGv-4c-i9F">
+                        <rect key="frame" x="0.0" y="0.0" width="344.5" height="739"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="JMg-WR-aWm"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NSY-HL-3rh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="595" y="173"/>
+        </scene>
+    </scenes>
+</document>

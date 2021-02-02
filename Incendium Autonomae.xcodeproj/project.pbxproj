@@ -1,0 +1,913 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B7AB1C8564228CF7C5655BF /* Pods_Incendium_Autonomae.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB74E2BB155017AE7498336E /* Pods_Incendium_Autonomae.framework */; };
+		561C486C25ABA38800C501DF /* TestingViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 561C486B25ABA38800C501DF /* TestingViewController.mm */; };
+		562D3A12259FE72600E2C834 /* AircraftAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 562D3A11259FE72600E2C834 /* AircraftAnnotationView.m */; };
+		562D3A1C259FEA4C00E2C834 /* AircraftAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 562D3A1B259FEA4C00E2C834 /* AircraftAnnotation.m */; };
+		562D3A2325A00C6E00E2C834 /* DemoUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 562D3A2225A00C6E00E2C834 /* DemoUtility.m */; };
+		562D3A2D25A090B700E2C834 /* GSButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 562D3A2C25A090B700E2C834 /* GSButtonViewController.m */; };
+		562D3A3225A090E400E2C834 /* GSButtonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 562D3A3125A090E400E2C834 /* GSButtonViewController.xib */; };
+		562D3A3C25A18AF300E2C834 /* WayPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 562D3A3B25A18AF300E2C834 /* WayPoint.m */; };
+		562D3A5025A18CB100E2C834 /* WaypointConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 562D3A4F25A18CB100E2C834 /* WaypointConfigViewController.m */; };
+		562D3A5B25A18D5C00E2C834 /* WaypointConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 562D3A5A25A18D5C00E2C834 /* WaypointConfigViewController.xib */; };
+		567CDA70259DBA500064148C /* WayPointController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567CDA6F259DBA500064148C /* WayPointController.m */; };
+		56A63310259DFBD000324DC9 /* Waypoint.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56A63312259DFBD000324DC9 /* Waypoint.storyboard */; };
+		56A63319259E8C0D00324DC9 /* MapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A63318259E8C0D00324DC9 /* MapController.m */; };
+		56A9A1D52599E9D200C975A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A9A1D42599E9D200C975A6 /* AppDelegate.m */; };
+		56A9A1D82599E9D200C975A6 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A9A1D72599E9D200C975A6 /* SceneDelegate.m */; };
+		56A9A1DB2599E9D200C975A6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A9A1DA2599E9D200C975A6 /* ViewController.m */; };
+		56A9A1DE2599E9D200C975A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56A9A1DC2599E9D200C975A6 /* Main.storyboard */; };
+		56A9A1E02599E9D600C975A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56A9A1DF2599E9D600C975A6 /* Assets.xcassets */; };
+		56A9A1E32599E9D600C975A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56A9A1E12599E9D600C975A6 /* LaunchScreen.storyboard */; };
+		56A9A1E62599E9D600C975A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A9A1E52599E9D600C975A6 /* main.m */; };
+		56A9A1F02599E9D700C975A6 /* Incendium_AutonomaeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A9A1EF2599E9D700C975A6 /* Incendium_AutonomaeTests.m */; };
+		56A9A1FB2599E9D700C975A6 /* Incendium_AutonomaeUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A9A1FA2599E9D700C975A6 /* Incendium_AutonomaeUITests.m */; };
+		56A9A21E259A9DDB00C975A6 /* RegistrationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A9A21D259A9DDB00C975A6 /* RegistrationController.m */; };
+		56A9A22D259AF92E00C975A6 /* PanelsCollectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A9A22C259AF92E00C975A6 /* PanelsCollectionsViewController.m */; };
+		56A9A237259AFB0100C975A6 /* PanelsCollections.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56A9A236259AFB0100C975A6 /* PanelsCollections.storyboard */; };
+		56D4E39E259BDA14001D6AB5 /* CameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56D4E39D259BDA14001D6AB5 /* CameraController.m */; };
+		56E1735125B21EC000E8E21A /* FIRE_DETECTION.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 56E1735025B21EC000E8E21A /* FIRE_DETECTION.mlmodel */; };
+		56E1735925B230F200E8E21A /* CoreML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E1735825B230F200E8E21A /* CoreML.framework */; };
+		56E1735E25B2311400E8E21A /* Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E1735D25B2311400E8E21A /* Vision.framework */; };
+		56E1736925B2917700E8E21A /* FIRE_DETECTION2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 56E1736825B2917700E8E21A /* FIRE_DETECTION2.mlmodel */; };
+		56E1738025B91A1800E8E21A /* MachineLearningAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E1737F25B91A1800E8E21A /* MachineLearningAction.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		56A9A1EC2599E9D700C975A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56A9A1C82599E9D200C975A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56A9A1CF2599E9D200C975A6;
+			remoteInfo = "Incendium Autonomae";
+		};
+		56A9A1F72599E9D700C975A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56A9A1C82599E9D200C975A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56A9A1CF2599E9D200C975A6;
+			remoteInfo = "Incendium Autonomae";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		09D6F4A1C6B153F4461F9F23 /* Pods-Incendium Autonomae.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Incendium Autonomae.debug.xcconfig"; path = "Target Support Files/Pods-Incendium Autonomae/Pods-Incendium Autonomae.debug.xcconfig"; sourceTree = "<group>"; };
+		561C486A25ABA37100C501DF /* TestingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestingViewController.h; sourceTree = "<group>"; };
+		561C486B25ABA38800C501DF /* TestingViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestingViewController.mm; sourceTree = "<group>"; };
+		562D3A10259FE71500E2C834 /* AircraftAnnotationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AircraftAnnotationView.h; sourceTree = "<group>"; };
+		562D3A11259FE72600E2C834 /* AircraftAnnotationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AircraftAnnotationView.m; sourceTree = "<group>"; };
+		562D3A19259FEA3600E2C834 /* AircraftAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AircraftAnnotation.h; sourceTree = "<group>"; };
+		562D3A1B259FEA4C00E2C834 /* AircraftAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AircraftAnnotation.m; sourceTree = "<group>"; };
+		562D3A2125A00C5E00E2C834 /* DemoUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoUtility.h; sourceTree = "<group>"; };
+		562D3A2225A00C6E00E2C834 /* DemoUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoUtility.m; sourceTree = "<group>"; };
+		562D3A2B25A0906100E2C834 /* GSButtonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GSButtonViewController.h; sourceTree = "<group>"; };
+		562D3A2C25A090B700E2C834 /* GSButtonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GSButtonViewController.m; sourceTree = "<group>"; };
+		562D3A3125A090E400E2C834 /* GSButtonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GSButtonViewController.xib; sourceTree = "<group>"; };
+		562D3A3A25A18ADF00E2C834 /* Waypoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Waypoint.h; sourceTree = "<group>"; };
+		562D3A3B25A18AF300E2C834 /* WayPoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WayPoint.m; sourceTree = "<group>"; };
+		562D3A4625A18C9E00E2C834 /* WaypointConfigViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaypointConfigViewController.h; sourceTree = "<group>"; };
+		562D3A4F25A18CB100E2C834 /* WaypointConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaypointConfigViewController.m; sourceTree = "<group>"; };
+		562D3A5A25A18D5C00E2C834 /* WaypointConfigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaypointConfigViewController.xib; sourceTree = "<group>"; };
+		567CDA6E259DBA420064148C /* WayPointController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WayPointController.h; sourceTree = "<group>"; };
+		567CDA6F259DBA500064148C /* WayPointController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WayPointController.m; sourceTree = "<group>"; };
+		56A63311259DFBD000324DC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Waypoint.storyboard; sourceTree = "<group>"; };
+		56A63317259E8BF200324DC9 /* MapController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapController.h; sourceTree = "<group>"; };
+		56A63318259E8C0D00324DC9 /* MapController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapController.m; sourceTree = "<group>"; };
+		56A9A1D02599E9D200C975A6 /* Incendium Autonomae.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Incendium Autonomae.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		56A9A1D32599E9D200C975A6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		56A9A1D42599E9D200C975A6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		56A9A1D62599E9D200C975A6 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		56A9A1D72599E9D200C975A6 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		56A9A1D92599E9D200C975A6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		56A9A1DA2599E9D200C975A6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		56A9A1DD2599E9D200C975A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		56A9A1DF2599E9D600C975A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		56A9A1E22599E9D600C975A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		56A9A1E42599E9D600C975A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56A9A1E52599E9D600C975A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		56A9A1EB2599E9D700C975A6 /* Incendium AutonomaeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Incendium AutonomaeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		56A9A1EF2599E9D700C975A6 /* Incendium_AutonomaeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Incendium_AutonomaeTests.m; sourceTree = "<group>"; };
+		56A9A1F12599E9D700C975A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56A9A1F62599E9D700C975A6 /* Incendium AutonomaeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Incendium AutonomaeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		56A9A1FA2599E9D700C975A6 /* Incendium_AutonomaeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Incendium_AutonomaeUITests.m; sourceTree = "<group>"; };
+		56A9A1FC2599E9D700C975A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56A9A21C259A9DBC00C975A6 /* RegistrationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegistrationController.h; sourceTree = "<group>"; };
+		56A9A21D259A9DDB00C975A6 /* RegistrationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegistrationController.m; sourceTree = "<group>"; };
+		56A9A22B259AF92400C975A6 /* PanelsCollectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelsCollectionsViewController.h; sourceTree = "<group>"; };
+		56A9A22C259AF92E00C975A6 /* PanelsCollectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelsCollectionsViewController.m; sourceTree = "<group>"; };
+		56A9A236259AFB0100C975A6 /* PanelsCollections.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PanelsCollections.storyboard; sourceTree = "<group>"; };
+		56D4E39C259BD9FC001D6AB5 /* CameraController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraController.h; sourceTree = "<group>"; };
+		56D4E39D259BDA14001D6AB5 /* CameraController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraController.m; sourceTree = "<group>"; };
+		56E1735025B21EC000E8E21A /* FIRE_DETECTION.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = FIRE_DETECTION.mlmodel; path = ../../../../../Downloads/FIRE_DETECTION.mlmodel; sourceTree = "<group>"; };
+		56E1735825B230F200E8E21A /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
+		56E1735D25B2311400E8E21A /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = System/Library/Frameworks/Vision.framework; sourceTree = SDKROOT; };
+		56E1736825B2917700E8E21A /* FIRE_DETECTION2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = FIRE_DETECTION2.mlmodel; path = ../../../../../Downloads/FIRE_DETECTION2.mlmodel; sourceTree = "<group>"; };
+		56E1737E25B919EE00E8E21A /* MachineLearningAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MachineLearningAction.h; sourceTree = "<group>"; };
+		56E1737F25B91A1800E8E21A /* MachineLearningAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MachineLearningAction.m; sourceTree = "<group>"; };
+		AB74E2BB155017AE7498336E /* Pods_Incendium_Autonomae.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Incendium_Autonomae.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCED024F0C018337388B38D4 /* Pods-Incendium Autonomae.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Incendium Autonomae.release.xcconfig"; path = "Target Support Files/Pods-Incendium Autonomae/Pods-Incendium Autonomae.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		56A9A1CD2599E9D200C975A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56E1735925B230F200E8E21A /* CoreML.framework in Frameworks */,
+				56E1735E25B2311400E8E21A /* Vision.framework in Frameworks */,
+				1B7AB1C8564228CF7C5655BF /* Pods_Incendium_Autonomae.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56A9A1E82599E9D700C975A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56A9A1F32599E9D700C975A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		344A75436385B8EFBFB88329 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				09D6F4A1C6B153F4461F9F23 /* Pods-Incendium Autonomae.debug.xcconfig */,
+				DCED024F0C018337388B38D4 /* Pods-Incendium Autonomae.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		561C486925ABA34500C501DF /* Testing Images Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				561C486B25ABA38800C501DF /* TestingViewController.mm */,
+				561C486A25ABA37100C501DF /* TestingViewController.h */,
+			);
+			path = "Testing Images Controllers";
+			sourceTree = "<group>";
+		};
+		562D3A0F259FE6EF00E2C834 /* Aircraft Annotation */ = {
+			isa = PBXGroup;
+			children = (
+				562D3A10259FE71500E2C834 /* AircraftAnnotationView.h */,
+				562D3A11259FE72600E2C834 /* AircraftAnnotationView.m */,
+				562D3A19259FEA3600E2C834 /* AircraftAnnotation.h */,
+				562D3A1B259FEA4C00E2C834 /* AircraftAnnotation.m */,
+			);
+			path = "Aircraft Annotation";
+			sourceTree = "<group>";
+		};
+		562D3A2025A00C4800E2C834 /* Demo Utility */ = {
+			isa = PBXGroup;
+			children = (
+				562D3A2125A00C5E00E2C834 /* DemoUtility.h */,
+				562D3A2225A00C6E00E2C834 /* DemoUtility.m */,
+			);
+			path = "Demo Utility";
+			sourceTree = "<group>";
+		};
+		562D3A2A25A0904800E2C834 /* Button Controller */ = {
+			isa = PBXGroup;
+			children = (
+				562D3A3125A090E400E2C834 /* GSButtonViewController.xib */,
+				562D3A2B25A0906100E2C834 /* GSButtonViewController.h */,
+				562D3A2C25A090B700E2C834 /* GSButtonViewController.m */,
+			);
+			path = "Button Controller";
+			sourceTree = "<group>";
+		};
+		562D3A3925A18AC400E2C834 /* Mission */ = {
+			isa = PBXGroup;
+			children = (
+				562D3A3A25A18ADF00E2C834 /* Waypoint.h */,
+				562D3A3B25A18AF300E2C834 /* WayPoint.m */,
+			);
+			path = Mission;
+			sourceTree = "<group>";
+		};
+		562D3A4025A18B9100E2C834 /* Waypoint Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				562D3A5A25A18D5C00E2C834 /* WaypointConfigViewController.xib */,
+				562D3A4F25A18CB100E2C834 /* WaypointConfigViewController.m */,
+				562D3A4625A18C9E00E2C834 /* WaypointConfigViewController.h */,
+			);
+			path = "Waypoint Configuration";
+			sourceTree = "<group>";
+		};
+		567CDA69259DB5950064148C /* Missions */ = {
+			isa = PBXGroup;
+			children = (
+				567CDA6A259DB6180064148C /* MapView + WayPoint */,
+			);
+			path = Missions;
+			sourceTree = "<group>";
+		};
+		567CDA6A259DB6180064148C /* MapView + WayPoint */ = {
+			isa = PBXGroup;
+			children = (
+				562D3A4025A18B9100E2C834 /* Waypoint Configuration */,
+				562D3A3925A18AC400E2C834 /* Mission */,
+				562D3A2A25A0904800E2C834 /* Button Controller */,
+				562D3A2025A00C4800E2C834 /* Demo Utility */,
+				562D3A0F259FE6EF00E2C834 /* Aircraft Annotation */,
+				56A63316259E8BCD00324DC9 /* Map Annotation */,
+				567CDA6E259DBA420064148C /* WayPointController.h */,
+				567CDA6F259DBA500064148C /* WayPointController.m */,
+				56A63312259DFBD000324DC9 /* Waypoint.storyboard */,
+			);
+			path = "MapView + WayPoint";
+			sourceTree = "<group>";
+		};
+		56A63316259E8BCD00324DC9 /* Map Annotation */ = {
+			isa = PBXGroup;
+			children = (
+				56A63317259E8BF200324DC9 /* MapController.h */,
+				56A63318259E8C0D00324DC9 /* MapController.m */,
+			);
+			path = "Map Annotation";
+			sourceTree = "<group>";
+		};
+		56A9A1C72599E9D200C975A6 = {
+			isa = PBXGroup;
+			children = (
+				56A9A1D22599E9D200C975A6 /* Incendium Autonomae */,
+				56A9A1EE2599E9D700C975A6 /* Incendium AutonomaeTests */,
+				56A9A1F92599E9D700C975A6 /* Incendium AutonomaeUITests */,
+				56A9A1D12599E9D200C975A6 /* Products */,
+				344A75436385B8EFBFB88329 /* Pods */,
+				D3F257DED005B81FB42F5491 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		56A9A1D12599E9D200C975A6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				56A9A1D02599E9D200C975A6 /* Incendium Autonomae.app */,
+				56A9A1EB2599E9D700C975A6 /* Incendium AutonomaeTests.xctest */,
+				56A9A1F62599E9D700C975A6 /* Incendium AutonomaeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		56A9A1D22599E9D200C975A6 /* Incendium Autonomae */ = {
+			isa = PBXGroup;
+			children = (
+				56E1736D25B8F27B00E8E21A /* Custom Actions */,
+				561C486925ABA34500C501DF /* Testing Images Controllers */,
+				567CDA69259DB5950064148C /* Missions */,
+				56D4E39B259BD8E4001D6AB5 /* Camera */,
+				56A9A231259AFABC00C975A6 /* Assisting Views */,
+				56A9A21B259A9D9A00C975A6 /* Registration */,
+				56A9A1D32599E9D200C975A6 /* AppDelegate.h */,
+				56A9A1D42599E9D200C975A6 /* AppDelegate.m */,
+				56A9A1D62599E9D200C975A6 /* SceneDelegate.h */,
+				56A9A1D72599E9D200C975A6 /* SceneDelegate.m */,
+				56E1735025B21EC000E8E21A /* FIRE_DETECTION.mlmodel */,
+				56E1736825B2917700E8E21A /* FIRE_DETECTION2.mlmodel */,
+				56A9A1D92599E9D200C975A6 /* ViewController.h */,
+				56A9A1DA2599E9D200C975A6 /* ViewController.m */,
+				56A9A1DC2599E9D200C975A6 /* Main.storyboard */,
+				56A9A1DF2599E9D600C975A6 /* Assets.xcassets */,
+				56A9A1E12599E9D600C975A6 /* LaunchScreen.storyboard */,
+				56A9A1E42599E9D600C975A6 /* Info.plist */,
+				56A9A1E52599E9D600C975A6 /* main.m */,
+			);
+			path = "Incendium Autonomae";
+			sourceTree = "<group>";
+		};
+		56A9A1EE2599E9D700C975A6 /* Incendium AutonomaeTests */ = {
+			isa = PBXGroup;
+			children = (
+				56A9A1EF2599E9D700C975A6 /* Incendium_AutonomaeTests.m */,
+				56A9A1F12599E9D700C975A6 /* Info.plist */,
+			);
+			path = "Incendium AutonomaeTests";
+			sourceTree = "<group>";
+		};
+		56A9A1F92599E9D700C975A6 /* Incendium AutonomaeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				56A9A1FA2599E9D700C975A6 /* Incendium_AutonomaeUITests.m */,
+				56A9A1FC2599E9D700C975A6 /* Info.plist */,
+			);
+			path = "Incendium AutonomaeUITests";
+			sourceTree = "<group>";
+		};
+		56A9A21B259A9D9A00C975A6 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				56A9A21C259A9DBC00C975A6 /* RegistrationController.h */,
+				56A9A21D259A9DDB00C975A6 /* RegistrationController.m */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		56A9A231259AFABC00C975A6 /* Assisting Views */ = {
+			isa = PBXGroup;
+			children = (
+				56A9A232259AFAD000C975A6 /* Panels */,
+			);
+			path = "Assisting Views";
+			sourceTree = "<group>";
+		};
+		56A9A232259AFAD000C975A6 /* Panels */ = {
+			isa = PBXGroup;
+			children = (
+				56A9A236259AFB0100C975A6 /* PanelsCollections.storyboard */,
+				56A9A22C259AF92E00C975A6 /* PanelsCollectionsViewController.m */,
+				56A9A22B259AF92400C975A6 /* PanelsCollectionsViewController.h */,
+			);
+			path = Panels;
+			sourceTree = "<group>";
+		};
+		56D4E39B259BD8E4001D6AB5 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				56D4E39C259BD9FC001D6AB5 /* CameraController.h */,
+				56D4E39D259BDA14001D6AB5 /* CameraController.m */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		56E1736D25B8F27B00E8E21A /* Custom Actions */ = {
+			isa = PBXGroup;
+			children = (
+				56E1737E25B919EE00E8E21A /* MachineLearningAction.h */,
+				56E1737F25B91A1800E8E21A /* MachineLearningAction.m */,
+			);
+			path = "Custom Actions";
+			sourceTree = "<group>";
+		};
+		D3F257DED005B81FB42F5491 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56E1735D25B2311400E8E21A /* Vision.framework */,
+				56E1735825B230F200E8E21A /* CoreML.framework */,
+				AB74E2BB155017AE7498336E /* Pods_Incendium_Autonomae.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		56A9A1CF2599E9D200C975A6 /* Incendium Autonomae */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56A9A1FF2599E9D700C975A6 /* Build configuration list for PBXNativeTarget "Incendium Autonomae" */;
+			buildPhases = (
+				04E65A05FB81FEB731D84FAF /* [CP] Check Pods Manifest.lock */,
+				56A9A1CC2599E9D200C975A6 /* Sources */,
+				56A9A1CD2599E9D200C975A6 /* Frameworks */,
+				56A9A1CE2599E9D200C975A6 /* Resources */,
+				A496BF32995F577D7856F25D /* [CP] Embed Pods Frameworks */,
+				5632862F15DF0BBD872E1403 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Incendium Autonomae";
+			productName = "Incendium Autonomae";
+			productReference = 56A9A1D02599E9D200C975A6 /* Incendium Autonomae.app */;
+			productType = "com.apple.product-type.application";
+		};
+		56A9A1EA2599E9D700C975A6 /* Incendium AutonomaeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56A9A2022599E9D700C975A6 /* Build configuration list for PBXNativeTarget "Incendium AutonomaeTests" */;
+			buildPhases = (
+				56A9A1E72599E9D700C975A6 /* Sources */,
+				56A9A1E82599E9D700C975A6 /* Frameworks */,
+				56A9A1E92599E9D700C975A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56A9A1ED2599E9D700C975A6 /* PBXTargetDependency */,
+			);
+			name = "Incendium AutonomaeTests";
+			productName = "Incendium AutonomaeTests";
+			productReference = 56A9A1EB2599E9D700C975A6 /* Incendium AutonomaeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		56A9A1F52599E9D700C975A6 /* Incendium AutonomaeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56A9A2052599E9D700C975A6 /* Build configuration list for PBXNativeTarget "Incendium AutonomaeUITests" */;
+			buildPhases = (
+				56A9A1F22599E9D700C975A6 /* Sources */,
+				56A9A1F32599E9D700C975A6 /* Frameworks */,
+				56A9A1F42599E9D700C975A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56A9A1F82599E9D700C975A6 /* PBXTargetDependency */,
+			);
+			name = "Incendium AutonomaeUITests";
+			productName = "Incendium AutonomaeUITests";
+			productReference = 56A9A1F62599E9D700C975A6 /* Incendium AutonomaeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		56A9A1C82599E9D200C975A6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					56A9A1CF2599E9D200C975A6 = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					56A9A1EA2599E9D700C975A6 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 56A9A1CF2599E9D200C975A6;
+					};
+					56A9A1F52599E9D700C975A6 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 56A9A1CF2599E9D200C975A6;
+					};
+				};
+			};
+			buildConfigurationList = 56A9A1CB2599E9D200C975A6 /* Build configuration list for PBXProject "Incendium Autonomae" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 56A9A1C72599E9D200C975A6;
+			productRefGroup = 56A9A1D12599E9D200C975A6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				56A9A1CF2599E9D200C975A6 /* Incendium Autonomae */,
+				56A9A1EA2599E9D700C975A6 /* Incendium AutonomaeTests */,
+				56A9A1F52599E9D700C975A6 /* Incendium AutonomaeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		56A9A1CE2599E9D200C975A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				562D3A3225A090E400E2C834 /* GSButtonViewController.xib in Resources */,
+				56A9A1E32599E9D600C975A6 /* LaunchScreen.storyboard in Resources */,
+				56A9A237259AFB0100C975A6 /* PanelsCollections.storyboard in Resources */,
+				56A9A1E02599E9D600C975A6 /* Assets.xcassets in Resources */,
+				562D3A5B25A18D5C00E2C834 /* WaypointConfigViewController.xib in Resources */,
+				56A63310259DFBD000324DC9 /* Waypoint.storyboard in Resources */,
+				56A9A1DE2599E9D200C975A6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56A9A1E92599E9D700C975A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56A9A1F42599E9D700C975A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04E65A05FB81FEB731D84FAF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Incendium Autonomae-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5632862F15DF0BBD872E1403 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Incendium Autonomae/Pods-Incendium Autonomae-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Incendium Autonomae/Pods-Incendium Autonomae-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Incendium Autonomae/Pods-Incendium Autonomae-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A496BF32995F577D7856F25D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Incendium Autonomae/Pods-Incendium Autonomae-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Incendium Autonomae/Pods-Incendium Autonomae-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Incendium Autonomae/Pods-Incendium Autonomae-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		56A9A1CC2599E9D200C975A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				567CDA70259DBA500064148C /* WayPointController.m in Sources */,
+				561C486C25ABA38800C501DF /* TestingViewController.mm in Sources */,
+				56D4E39E259BDA14001D6AB5 /* CameraController.m in Sources */,
+				56A9A1DB2599E9D200C975A6 /* ViewController.m in Sources */,
+				562D3A12259FE72600E2C834 /* AircraftAnnotationView.m in Sources */,
+				56E1736925B2917700E8E21A /* FIRE_DETECTION2.mlmodel in Sources */,
+				56A9A22D259AF92E00C975A6 /* PanelsCollectionsViewController.m in Sources */,
+				56A9A1D52599E9D200C975A6 /* AppDelegate.m in Sources */,
+				562D3A5025A18CB100E2C834 /* WaypointConfigViewController.m in Sources */,
+				562D3A3C25A18AF300E2C834 /* WayPoint.m in Sources */,
+				56A9A1E62599E9D600C975A6 /* main.m in Sources */,
+				56A9A1D82599E9D200C975A6 /* SceneDelegate.m in Sources */,
+				562D3A2D25A090B700E2C834 /* GSButtonViewController.m in Sources */,
+				56E1735125B21EC000E8E21A /* FIRE_DETECTION.mlmodel in Sources */,
+				56A63319259E8C0D00324DC9 /* MapController.m in Sources */,
+				562D3A2325A00C6E00E2C834 /* DemoUtility.m in Sources */,
+				56E1738025B91A1800E8E21A /* MachineLearningAction.m in Sources */,
+				562D3A1C259FEA4C00E2C834 /* AircraftAnnotation.m in Sources */,
+				56A9A21E259A9DDB00C975A6 /* RegistrationController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56A9A1E72599E9D700C975A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56A9A1F02599E9D700C975A6 /* Incendium_AutonomaeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56A9A1F22599E9D700C975A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56A9A1FB2599E9D700C975A6 /* Incendium_AutonomaeUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		56A9A1ED2599E9D700C975A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56A9A1CF2599E9D200C975A6 /* Incendium Autonomae */;
+			targetProxy = 56A9A1EC2599E9D700C975A6 /* PBXContainerItemProxy */;
+		};
+		56A9A1F82599E9D700C975A6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 56A9A1CF2599E9D200C975A6 /* Incendium Autonomae */;
+			targetProxy = 56A9A1F72599E9D700C975A6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		56A63312259DFBD000324DC9 /* Waypoint.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				56A63311259DFBD000324DC9 /* Base */,
+			);
+			name = Waypoint.storyboard;
+			sourceTree = "<group>";
+		};
+		56A9A1DC2599E9D200C975A6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				56A9A1DD2599E9D200C975A6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		56A9A1E12599E9D600C975A6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				56A9A1E22599E9D600C975A6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		56A9A1FD2599E9D700C975A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		56A9A1FE2599E9D700C975A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		56A9A2002599E9D700C975A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09D6F4A1C6B153F4461F9F23 /* Pods-Incendium Autonomae.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U3V9LDJ958;
+				INFOPLIST_FILE = "Incendium Autonomae/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com-Rushiv.DJI.Incendium-Autonomae";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		56A9A2012599E9D700C975A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCED024F0C018337388B38D4 /* Pods-Incendium Autonomae.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U3V9LDJ958;
+				INFOPLIST_FILE = "Incendium Autonomae/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com-Rushiv.DJI.Incendium-Autonomae";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		56A9A2032599E9D700C975A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U3V9LDJ958;
+				INFOPLIST_FILE = "Incendium AutonomaeTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com-Rushiv.DJI.Incendium-AutonomaeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Incendium Autonomae.app/Incendium Autonomae";
+			};
+			name = Debug;
+		};
+		56A9A2042599E9D700C975A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U3V9LDJ958;
+				INFOPLIST_FILE = "Incendium AutonomaeTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com-Rushiv.DJI.Incendium-AutonomaeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Incendium Autonomae.app/Incendium Autonomae";
+			};
+			name = Release;
+		};
+		56A9A2062599E9D700C975A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U3V9LDJ958;
+				INFOPLIST_FILE = "Incendium AutonomaeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com-Rushiv.DJI.Incendium-AutonomaeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Incendium Autonomae";
+			};
+			name = Debug;
+		};
+		56A9A2072599E9D700C975A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U3V9LDJ958;
+				INFOPLIST_FILE = "Incendium AutonomaeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com-Rushiv.DJI.Incendium-AutonomaeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Incendium Autonomae";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		56A9A1CB2599E9D200C975A6 /* Build configuration list for PBXProject "Incendium Autonomae" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56A9A1FD2599E9D700C975A6 /* Debug */,
+				56A9A1FE2599E9D700C975A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56A9A1FF2599E9D700C975A6 /* Build configuration list for PBXNativeTarget "Incendium Autonomae" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56A9A2002599E9D700C975A6 /* Debug */,
+				56A9A2012599E9D700C975A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56A9A2022599E9D700C975A6 /* Build configuration list for PBXNativeTarget "Incendium AutonomaeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56A9A2032599E9D700C975A6 /* Debug */,
+				56A9A2042599E9D700C975A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56A9A2052599E9D700C975A6 /* Build configuration list for PBXNativeTarget "Incendium AutonomaeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56A9A2062599E9D700C975A6 /* Debug */,
+				56A9A2072599E9D700C975A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 56A9A1C82599E9D200C975A6 /* Project object */;
+}
