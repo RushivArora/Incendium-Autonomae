@@ -59,8 +59,9 @@
 {
     if (!error) {
         [self showAlertViewWithMessage:@"Registration Success"];
-        //[DJISDKManager startConnectionToProduct];
-        [DJISDKManager enableBridgeModeWithBridgeAppIP:@"10.0.0.2"];
+        [DJISDKManager startConnectionToProduct];
+        //[DJISDKManager enableBridgeModeWithBridgeAppIP:@"10.0.0.253"];
+        //[DJISDKManager enableBridgeModeWithBridgeAppIP:@"192.168.1.23"];
     }else
     {
         [self showAlertViewWithMessage:[NSString stringWithFormat:@"Registration Error:%@", error]];

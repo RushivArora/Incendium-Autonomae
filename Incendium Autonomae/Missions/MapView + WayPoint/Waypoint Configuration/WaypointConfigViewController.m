@@ -7,7 +7,7 @@
 
 #import "WaypointConfigViewController.h"
 
-@interface WaypointConfigViewController ()
+@interface WaypointConfigViewController () <UITextFieldDelegate>
 
 @end
 
@@ -15,9 +15,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.altitudeTextField.delegate = self;
     [self initUI];
     
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,7 +32,7 @@
 
 - (void)initUI
 {
-    self.altitudeTextField.text = @"20"; //Set the altitude to 20
+    self.altitudeTextField.text = @"5"; //Set the altitude to 20
     self.autoFlightSpeedTextField.text = @"8"; //Set the autoFlightSpeed to 8
     self.maxFlightSpeedTextField.text = @"10"; //Set the maxFlightSpeed to 10
     [self.actionSegmentedControl setSelectedSegmentIndex:1]; //Set the finishAction to DJIWaypointMissionFinishedGoHome

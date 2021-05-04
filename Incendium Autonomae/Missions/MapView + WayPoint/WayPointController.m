@@ -6,10 +6,9 @@
 //
 
 #import "WayPointController.h"
-#import "MapController.h"
 #import "DemoUtility.h"
-#import "WaypointConfigViewController.h"
 #import "GSButtonViewController.h"
+#import "WaypointConfigViewController.h"
 #import <DJISDK/DJISDK.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
@@ -19,12 +18,10 @@
 
 #define kEnterNaviModeFailedAlertTag 1001
 
-@interface WaypointController () <MKMapViewDelegate, CLLocationManagerDelegate, DJISDKManagerDelegate, DJIFlightControllerDelegate, GSButtonViewControllerDelegate, WaypointConfigViewControllerDelegate>
+@interface WaypointController () <MKMapViewDelegate, CLLocationManagerDelegate, DJISDKManagerDelegate, DJIFlightControllerDelegate, GSButtonViewControllerDelegate, WaypointConfigViewControllerDelegate, UITextFieldDelegate>
 
 @property (nonatomic, assign) BOOL isEditingPoints;
 @property (nonatomic, strong) GSButtonViewController *gsButtonVC;
-@property (nonatomic, strong) WaypointConfigViewController *waypointConfigVC;
-@property (nonatomic, strong) MapController *mapController;
 
 @property(nonatomic, strong) CLLocationManager* locationManager;
 @property(nonatomic, assign) CLLocationCoordinate2D userLocation;
@@ -41,6 +38,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *editBtn;
 
 @property(nonatomic, strong) DJIMutableWaypointMission* waypointMission;
+
+@property(nonatomic, strong) NSArray<CLLocation *> *verifyPoints;
 
 @end
 
@@ -385,5 +384,20 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+- (IBAction)verifyButtonAction:(id)sender {
+    NSLog(@"Verification has %lu points", (unsigned long)self.verifyPoints.count);
+    NSLog(@"%@", self.verifyPoints);
+    [self.mapController cleanAllPointsWithMapView:self.mapView];
+    for(int i = 0; i < self.verifyPoints.count; i ++){
+        //CGPoint point = CGPointMake(self.verifyPoints[i].coordinate.longitude, self.verifyPoints[i].coordinate.latitude);
+        CGPoint point = [self.mapView convertCoordinate:self.verifyPoints[i].coordinate toPointToView:self.mapView];
+        [self.mapController addPoint:point withMapView:self.mapView];
+    }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
 
 @end

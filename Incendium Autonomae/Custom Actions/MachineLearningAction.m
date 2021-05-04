@@ -18,35 +18,52 @@
     self = [super init];
     if (self) {
         _numImages = numImages;
+        _label = 10;
     }
     return self;
 }
 
 - (void) willRun{
     if(self.numImages > 0){
-        NSLog(@"Object was instantiated correctly. It should run as expected");
+        NSLog(@"Timeline ML: Object was instantiated correctly. It should run as expected");
     }
 }
 
 - (void) run{
+    [[DJISDKManager missionControl] elementDidStartRunning:self];
     [self printAction];
     [self loadMediaListsForMediaDownloadMode];
 }
 
 - (void) didRun {
-    NSLog(@"Was the Machine Learning Model output and running message printed? If so it ran");
+    NSLog(@"Timeline ML: Was the Machine Learning Model output and running message printed? If so it ran");
 }
 
-- (void) stop{
+- (void) stopRun {
     //do nothing
+    NSLog(@"Timeline ML: Stopping");
 }
 
 - (bool) isPausable{
+    NSLog(@"Timeline ML: isPausable");
     return false;
 }
 
+- (void) resumeRun{
+    NSLog(@"Timeline ML: Resume Run");
+}
+
+- (void) pauseRun {
+    NSLog(@"Timeline ML: In Pause");
+}
+
+- (NSError *_Nullable)checkValidity {
+    NSLog(@"Timeline ML: Checking Validity");
+    return nil;
+}
+
 - (void) printAction {
-    NSLog(@"Timeline: I am in the custom aircraft action");
+    NSLog(@"Timeline ML: I am in the custom aircraft action");
 }
 
 #pragma mark Custom Methods
@@ -139,9 +156,21 @@
                             [camera setMode:DJICameraModeShootPhoto withCompletion:^(NSError * _Nullable error) {
                                 if (error) {
                                     NSLog(@"Timeline: Download done, set CameraMode to ShootPhoto Failed");
+                                    double delayInSeconds = 2.0;
+                                    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                                    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                                        NSLog(@"About to stop");
+                                        [[DJISDKManager missionControl] element:self didFinishRunningWithError:nil];
+                                    });
                                 }
                                 else{
                                     NSLog(@"Timeline: Download done, set CameraMode to ShootPhoto success");
+                                    double delayInSeconds = 2.0;
+                                    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                                    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+                                        NSLog(@"About to stop");
+                                        [[DJISDKManager missionControl] element:self didFinishRunningWithError:nil];
+                                    });
                                 }
                             }];
                         }
@@ -165,10 +194,10 @@
     NSLog(@"Timeline: Width: %0.2f, Height: %0.2f", width, height);
     
     NSError *error;
-    weakSelf.model = [[[FIRE_DETECTION2 alloc] init] model];
-    weakSelf.input = [[FIRE_DETECTION2Input alloc] initWithMy_inputFromCGImage:myIcon.CGImage error:&error];
+    weakSelf.model = [[[FIRE_DETECTION3 alloc] init] model];
+    weakSelf.input = [[FIRE_DETECTION3Input alloc] initWithMy_inputFromCGImage:myIcon.CGImage error:&error];
     NSLog(@"Timeline: Input Error Message for ML model: %@",error);
-    weakSelf.output = ((FIRE_DETECTION2Output *)[weakSelf.model predictionFromFeatures:weakSelf.input error:&error]);
+    weakSelf.output = ((FIRE_DETECTION3Output *)[weakSelf.model predictionFromFeatures:weakSelf.input error:&error]);
     NSLog(@"Timeline: Output Error Message for ML model: %@",error);
     if (_output == nil){
         NSLog(@"Timeline: nil output from ML model");
@@ -181,6 +210,27 @@
     NSLog(@"Timeline: Fire Probability  : %@", arr[0]);
     NSLog(@"Timeline: Smoke Probability : %@", arr[1]);
     NSLog(@"Timeline: Spare Probability : %@", arr[2]);
+    weakSelf.label = 5;
+    float max = 0.0;
+    if(arr[0].floatValue >= max){
+        weakSelf.label = 0;
+        max = arr[0].floatValue;
+        NSLog(@"Probability in Fire set to %0.05f", max);
+    }
+    if(arr[1].floatValue >= max){
+        weakSelf.label = 1;
+        max = arr[1].floatValue;
+        NSLog(@"Probability in Smoke set to %0.05f", max);
+    }
+    if(arr[2].floatValue >= max){
+        weakSelf.label = 2;
+        max = arr[2].floatValue;
+        NSLog(@"Probability in Spare set to %0.05f", max);
+    }
+    
+    NSLog(@"Check : %0.005f", arr[0].floatValue);
+    NSLog(@"Check : %0.005f", arr[1].floatValue);
+    NSLog(@"Check : %0.005f", arr[2].floatValue);
 
     int dim1 = 0;
     int dim2 = 0;

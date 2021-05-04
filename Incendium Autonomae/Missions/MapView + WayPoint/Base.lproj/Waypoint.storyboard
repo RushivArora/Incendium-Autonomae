@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -111,25 +110,24 @@
                                     </constraint>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOv-cR-5qi">
-                                <rect key="frame" x="56" y="141" width="42" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKu-fp-UbD">
+                                <rect key="frame" x="20" y="315" width="80" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Focus">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Main View"/>
                                 <connections>
-                                    <action selector="focusMapAction:" destination="2YF-DT-2ys" eventType="touchUpInside" id="Xam-nn-4s7"/>
+                                    <segue destination="oIN-pD-P7V" kind="unwind" unwindAction="doneWithWaypointSelection:" id="J92-b1-nAR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRz-fR-wlr">
-                                <rect key="frame" x="54" y="103" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAF-l9-obG">
+                                <rect key="frame" x="17" y="353" width="86" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Edit">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="titleShadowColor" systemColor="opaqueSeparatorColor"/>
-                                </state>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Verify Points"/>
                                 <connections>
-                                    <action selector="editBtnAction:" destination="2YF-DT-2ys" eventType="touchUpInside" id="JqV-Cd-kiW"/>
+                                    <action selector="verifyButtonAction:" destination="2YF-DT-2ys" eventType="touchUpInside" id="5R9-ph-q02"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -151,7 +149,6 @@
                     </view>
                     <connections>
                         <outlet property="altitudeLabel" destination="8YG-ac-bdR" id="bCN-zF-o0k"/>
-                        <outlet property="editBtn" destination="gRz-fR-wlr" id="opa-bF-ezL"/>
                         <outlet property="gpsLabel" destination="SUE-5Y-UJi" id="OMz-9b-emE"/>
                         <outlet property="hsLabel" destination="JSm-iH-jPh" id="qCc-nr-gOa"/>
                         <outlet property="mapView" destination="Aly-sO-evc" id="T4b-jZ-c18"/>
@@ -162,13 +159,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="idP-Tk-KvR" sceneMemberID="firstResponder"/>
+                <exit id="oIN-pD-P7V" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-995" y="316"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

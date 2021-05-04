@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1B7AB1C8564228CF7C5655BF /* Pods_Incendium_Autonomae.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB74E2BB155017AE7498336E /* Pods_Incendium_Autonomae.framework */; };
+		5616475225CB940000EB9179 /* Autonomous_Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 5616475125CB940000EB9179 /* Autonomous_Utility.m */; };
+		5616475D25CB98BA00EB9179 /* Movement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5616475C25CB98BA00EB9179 /* Movement.m */; };
 		561C486C25ABA38800C501DF /* TestingViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 561C486B25ABA38800C501DF /* TestingViewController.mm */; };
 		562D3A12259FE72600E2C834 /* AircraftAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 562D3A11259FE72600E2C834 /* AircraftAnnotationView.m */; };
 		562D3A1C259FEA4C00E2C834 /* AircraftAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 562D3A1B259FEA4C00E2C834 /* AircraftAnnotation.m */; };
@@ -17,6 +19,7 @@
 		562D3A3C25A18AF300E2C834 /* WayPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 562D3A3B25A18AF300E2C834 /* WayPoint.m */; };
 		562D3A5025A18CB100E2C834 /* WaypointConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 562D3A4F25A18CB100E2C834 /* WaypointConfigViewController.m */; };
 		562D3A5B25A18D5C00E2C834 /* WaypointConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 562D3A5A25A18D5C00E2C834 /* WaypointConfigViewController.xib */; };
+		5678401E2636993C00636C14 /* FIRE_DETECTION3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5678401D2636993C00636C14 /* FIRE_DETECTION3.mlmodel */; };
 		567CDA70259DBA500064148C /* WayPointController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567CDA6F259DBA500064148C /* WayPointController.m */; };
 		56A63310259DFBD000324DC9 /* Waypoint.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56A63312259DFBD000324DC9 /* Waypoint.storyboard */; };
 		56A63319259E8C0D00324DC9 /* MapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56A63318259E8C0D00324DC9 /* MapController.m */; };
@@ -59,6 +62,10 @@
 
 /* Begin PBXFileReference section */
 		09D6F4A1C6B153F4461F9F23 /* Pods-Incendium Autonomae.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Incendium Autonomae.debug.xcconfig"; path = "Target Support Files/Pods-Incendium Autonomae/Pods-Incendium Autonomae.debug.xcconfig"; sourceTree = "<group>"; };
+		5616475025CB93D400EB9179 /* Autonomous_Utiliy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Autonomous_Utiliy.h; sourceTree = "<group>"; };
+		5616475125CB940000EB9179 /* Autonomous_Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Autonomous_Utility.m; sourceTree = "<group>"; };
+		5616475A25CB98A700EB9179 /* Movement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Movement.h; sourceTree = "<group>"; };
+		5616475C25CB98BA00EB9179 /* Movement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movement.m; sourceTree = "<group>"; };
 		561C486A25ABA37100C501DF /* TestingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestingViewController.h; sourceTree = "<group>"; };
 		561C486B25ABA38800C501DF /* TestingViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TestingViewController.mm; sourceTree = "<group>"; };
 		562D3A10259FE71500E2C834 /* AircraftAnnotationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AircraftAnnotationView.h; sourceTree = "<group>"; };
@@ -75,6 +82,7 @@
 		562D3A4625A18C9E00E2C834 /* WaypointConfigViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaypointConfigViewController.h; sourceTree = "<group>"; };
 		562D3A4F25A18CB100E2C834 /* WaypointConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaypointConfigViewController.m; sourceTree = "<group>"; };
 		562D3A5A25A18D5C00E2C834 /* WaypointConfigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaypointConfigViewController.xib; sourceTree = "<group>"; };
+		5678401D2636993C00636C14 /* FIRE_DETECTION3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FIRE_DETECTION3.mlmodel; sourceTree = "<group>"; };
 		567CDA6E259DBA420064148C /* WayPointController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WayPointController.h; sourceTree = "<group>"; };
 		567CDA6F259DBA500064148C /* WayPointController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WayPointController.m; sourceTree = "<group>"; };
 		56A63311259DFBD000324DC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Waypoint.storyboard; sourceTree = "<group>"; };
@@ -150,6 +158,33 @@
 				DCED024F0C018337388B38D4 /* Pods-Incendium Autonomae.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		5616474E25CB939100EB9179 /* Autonomous Fire Detection */ = {
+			isa = PBXGroup;
+			children = (
+				5616475925CB978600EB9179 /* Movement */,
+				5616474F25CB93AD00EB9179 /* Utility */,
+			);
+			path = "Autonomous Fire Detection";
+			sourceTree = "<group>";
+		};
+		5616474F25CB93AD00EB9179 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				5616475025CB93D400EB9179 /* Autonomous_Utiliy.h */,
+				5616475125CB940000EB9179 /* Autonomous_Utility.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		5616475925CB978600EB9179 /* Movement */ = {
+			isa = PBXGroup;
+			children = (
+				5616475A25CB98A700EB9179 /* Movement.h */,
+				5616475C25CB98BA00EB9179 /* Movement.m */,
+			);
+			path = Movement;
 			sourceTree = "<group>";
 		};
 		561C486925ABA34500C501DF /* Testing Images Controllers */ = {
@@ -268,6 +303,7 @@
 		56A9A1D22599E9D200C975A6 /* Incendium Autonomae */ = {
 			isa = PBXGroup;
 			children = (
+				5616474E25CB939100EB9179 /* Autonomous Fire Detection */,
 				56E1736D25B8F27B00E8E21A /* Custom Actions */,
 				561C486925ABA34500C501DF /* Testing Images Controllers */,
 				567CDA69259DB5950064148C /* Missions */,
@@ -279,6 +315,7 @@
 				56A9A1D62599E9D200C975A6 /* SceneDelegate.h */,
 				56A9A1D72599E9D200C975A6 /* SceneDelegate.m */,
 				56E1735025B21EC000E8E21A /* FIRE_DETECTION.mlmodel */,
+				5678401D2636993C00636C14 /* FIRE_DETECTION3.mlmodel */,
 				56E1736825B2917700E8E21A /* FIRE_DETECTION2.mlmodel */,
 				56A9A1D92599E9D200C975A6 /* ViewController.h */,
 				56A9A1DA2599E9D200C975A6 /* ViewController.m */,
@@ -561,16 +598,19 @@
 			files = (
 				567CDA70259DBA500064148C /* WayPointController.m in Sources */,
 				561C486C25ABA38800C501DF /* TestingViewController.mm in Sources */,
+				5678401E2636993C00636C14 /* FIRE_DETECTION3.mlmodel in Sources */,
 				56D4E39E259BDA14001D6AB5 /* CameraController.m in Sources */,
 				56A9A1DB2599E9D200C975A6 /* ViewController.m in Sources */,
 				562D3A12259FE72600E2C834 /* AircraftAnnotationView.m in Sources */,
 				56E1736925B2917700E8E21A /* FIRE_DETECTION2.mlmodel in Sources */,
 				56A9A22D259AF92E00C975A6 /* PanelsCollectionsViewController.m in Sources */,
 				56A9A1D52599E9D200C975A6 /* AppDelegate.m in Sources */,
+				5616475D25CB98BA00EB9179 /* Movement.m in Sources */,
 				562D3A5025A18CB100E2C834 /* WaypointConfigViewController.m in Sources */,
 				562D3A3C25A18AF300E2C834 /* WayPoint.m in Sources */,
 				56A9A1E62599E9D600C975A6 /* main.m in Sources */,
 				56A9A1D82599E9D200C975A6 /* SceneDelegate.m in Sources */,
+				5616475225CB940000EB9179 /* Autonomous_Utility.m in Sources */,
 				562D3A2D25A090B700E2C834 /* GSButtonViewController.m in Sources */,
 				56E1735125B21EC000E8E21A /* FIRE_DETECTION.mlmodel in Sources */,
 				56A63319259E8C0D00324DC9 /* MapController.m in Sources */,
@@ -878,7 +918,7 @@
 				56A9A1FE2599E9D700C975A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		56A9A1FF2599E9D700C975A6 /* Build configuration list for PBXNativeTarget "Incendium Autonomae" */ = {
 			isa = XCConfigurationList;
@@ -887,7 +927,7 @@
 				56A9A2012599E9D700C975A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		56A9A2022599E9D700C975A6 /* Build configuration list for PBXNativeTarget "Incendium AutonomaeTests" */ = {
 			isa = XCConfigurationList;
@@ -896,7 +936,7 @@
 				56A9A2042599E9D700C975A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		56A9A2052599E9D700C975A6 /* Build configuration list for PBXNativeTarget "Incendium AutonomaeUITests" */ = {
 			isa = XCConfigurationList;
@@ -905,7 +945,7 @@
 				56A9A2072599E9D700C975A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};

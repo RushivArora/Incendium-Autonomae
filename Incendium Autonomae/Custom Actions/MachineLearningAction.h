@@ -9,6 +9,7 @@
 #import <DJISDK/DJIMissionAction.h>
 #import <DJISDK/DJISDK.h>
 #import "FIRE_DETECTION2.h"
+#import "FIRE_DETECTION3.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -53,9 +54,10 @@ typedef NS_ENUM(NSInteger, AircraftActionError) {
 @interface MachineLearningAction : DJIMissionAction
 
 @property(nonatomic, readonly) int numImages;
+@property(nonatomic, readwrite) int label;
 @property (strong,nonatomic) NSMutableArray * imageArray;
-@property (strong, nonatomic) IBOutlet FIRE_DETECTION2Input *input;
-@property (strong, nonatomic) IBOutlet FIRE_DETECTION2Output *output;
+@property (strong, nonatomic) IBOutlet FIRE_DETECTION3Input *input;
+@property (strong, nonatomic) IBOutlet FIRE_DETECTION3Output *output;
 @property (strong, nonatomic) IBOutlet MLModel *model;
 
 /**
@@ -63,7 +65,7 @@ typedef NS_ENUM(NSInteger, AircraftActionError) {
  *  The angular velocity has a range of [0, 100] degrees/s and a default value of 20
  *  degrees/s.
  *
- *  @param numImages: The number of images to run the ML model on
+ *  @param numImages The number of images to run the ML model on
  */
 - (instancetype _Nullable)initWithNumberOfImages:(int)numImages;
 

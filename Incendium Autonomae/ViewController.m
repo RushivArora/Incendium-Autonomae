@@ -13,6 +13,8 @@
 #import "DemoUtility.h"
 #import "FIRE_DETECTION2.h"
 #import "MachineLearningAction.h"
+#import "WayPointController.h"
+#import "Autonomous_Utiliy.h"
 
 #define PHOTO_NUMBER 1
 #define ROTATE_ANGLE 45
@@ -53,6 +55,7 @@
 //Segue Interface
 @property (weak, nonatomic) IBOutlet UIButton *segueToPanels;
 @property (weak, nonatomic) IBOutlet UIButton *segueToWaypoint;
+- (IBAction)doneWithWaypointSelection:(UIStoryboardSegue *)segue;
 
 //Waypoint Mission Classes
 @property (strong, nonatomic) UIAlertController* prepareMissionProgressAlert;
@@ -63,7 +66,13 @@
 @property (atomic) double aircraftYaw;
 @property (nonatomic, strong) DJIMission* mission;
 @property (strong, nonatomic) UIAlertController* uploadMissionProgressAlert;
+
+//Timeline Related Properties
 @property (nonatomic, strong) MachineLearningAction *custom;
+@property(nonatomic, strong) NSArray<CLLocation *> *path;
+@property(atomic) double height;
+@property (strong, nonatomic) IBOutlet UIButton *predictionButton;
+
 
 @end
 
@@ -135,6 +144,8 @@
     [self.statusBarVC.statusBarView reloadData];
     
     [self performSelector:@selector(setUpFlightController) withObject:nil afterDelay:3.0 ];
+    self.path = nil;
+    self.height = 10.0;
 }
 
 - (void) setUpFlightController {
@@ -321,6 +332,7 @@
 
 - (IBAction)DisplayWaypointClicked:(id)sender {
     [self performSegueWithIdentifier:@"DisplayWaypoint" sender:self];
+    
 }
 
 - (IBAction)captureAction:(id)sender {
@@ -354,7 +366,7 @@
                     else {
                         [target showAlertViewWithTitle:@"Capture Photos Success" withMessage:@"Capture finished"];
                         NSLog(@"Capture Success");
-                        [target playbackAndDownload];
+                        //[target playbackAndDownload];
                     }
                 }];
                 sleep(2);
@@ -624,6 +636,10 @@
         self.imageArray = self.custom.imageArray;
         [segue.destinationViewController setValue:self.imageArray forKey:@"imageArray"];
     }
+    else if([segue.identifier isEqualToString:@"DisplayWaypoint"]){
+        NSLog(@"Preparing for waypoint segue");
+        [segue.destinationViewController setValue:self.path forKey:@"verifyPoints"];
+    }
 }
 
 - (void) temp {
@@ -677,7 +693,8 @@
 
 - (IBAction)recordAction:(id)sender {
     NSLog(@"In Record Action");
-    [self letsTrythis];
+    //[self letsTrythis];
+    [self startAuttonomousMission];
 }
 
 /*
@@ -822,7 +839,7 @@
     }];
 }
 
-- (DJIMission *) initializeMission2 {
+- (DJIMission *) initializeSpotWaypointMovementTrial {
 
     DJIMutableWaypointMission *mission = [[DJIMutableWaypointMission alloc] init];
     mission.maxFlightSpeed = 10.0;
@@ -846,10 +863,10 @@
     [wp1 addAction:action4];
     
     DJIWaypoint *wp2 = [[DJIWaypoint alloc] initWithCoordinate:self.aircraftLocation];
-    wp2.altitude = initialAltitude + 1;
+    wp2.altitude = initialAltitude + 5;
     
     DJIWaypoint *wp3 = [[DJIWaypoint alloc] initWithCoordinate:self.aircraftLocation];
-    wp3.altitude = initialAltitude + 0.5;
+    wp3.altitude = initialAltitude;
 
 
     [mission addWaypoint:wp1];
@@ -869,9 +886,9 @@
     NSLog(@"Is Timeline Paused: %d",[[DJISDKManager missionControl] isTimelinePaused]);
     
     //Clearning the TimeLine. Preparing to reset timeline
-    [[DJISDKManager missionControl] pauseTimeline];
-    [[DJISDKManager missionControl] stopTimeline];
-    [[DJISDKManager missionControl] removeAllListeners];
+    //[[DJISDKManager missionControl] pauseTimeline];
+    //[[DJISDKManager missionControl] stopTimeline];
+    //[[DJISDKManager missionControl] removeAllListeners];
     [[DJISDKManager missionControl] unscheduleEverything];
     
     
@@ -882,7 +899,7 @@
     else{
         NSLog(@"Timeline: Location is InValid");
     }
-    DJIMission *element = [self initializeMission2];
+    DJIMission *element = [self initializeSpotWaypointMovementTrial];
     NSError *error = [[DJISDKManager missionControl] scheduleElement:element];
     //NSError *error3 = [[DJISDKManager missionControl] scheduleElement:element];
     //NSError *error4 = [[DJISDKManager missionControl] scheduleElement:element];
@@ -936,11 +953,16 @@
             NSLog(@"Number of completed events in timeline: %d", numEvents);
         }
     }];
-    [[DJISDKManager missionControl] startTimeline];
-    //NSLog(@"Timeline: is trigger active: %d",[trigger isActive]);
-    NSLog(@"Is Timeline Running: %d",[[DJISDKManager missionControl] isTimelineRunning]);
-    NSLog(@"Is Timeline Paused: %d",[[DJISDKManager missionControl] isTimelinePaused]);
-    NSLog(@"Timeline: Timeline is done");
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [[DJISDKManager missionControl] startTimeline];
+        NSLog(@"Timeline has been started");
+        //NSLog(@"Timeline: is trigger active: %d",[trigger isActive]);
+        NSLog(@"Is Timeline Running: %d",[[DJISDKManager missionControl] isTimelineRunning]);
+        NSLog(@"Is Timeline Paused: %d",[[DJISDKManager missionControl] isTimelinePaused]);
+        NSLog(@"Timeline: Timeline is done");
+    });
 }
 
 - (DJIFlightController*) fetchFlightController {
@@ -981,5 +1003,224 @@
     }
     return mission;
 }
+
+- (IBAction)doneWithWaypointSelection:(UIStoryboardSegue *)segue {
+    NSLog(@"Done with Segue");
+    WaypointController *wpc = segue.sourceViewController;
+    NSArray* wayPoints = [[wpc mapController] wayPoints];
+    self.height = [wpc.waypointConfigVC.altitudeTextField.text floatValue];
+    NSLog(@"Timeline: Height received is %0.02f", self.height);
+    if (wayPoints == nil || wayPoints.count < 2) { //DJIWaypointMissionMinimumWaypointCount is 2.
+        ShowMessage(@"No or not enough waypoints for mission", @"", nil, @"OK");
+        return;
+    }
+    NSLog(@"Number of waypoints: %lu",(unsigned long)wayPoints.count);
+    NSLog(@"%@",wayPoints);
+    AutonomousController *autonomous = [[AutonomousController alloc] initWithBoundary:wayPoints];
+    [autonomous setHeight:self.height];
+    NSArray<CLLocation *> *path2 = [autonomous getPath];
+    self.path = path2;
+    
+    //NSArray<CLLocation *> *path2 = wayPoints;
+    //self.path = path2;
+    NSLog(@"Number of waypoints in path: %lu",self.path.count);
+}
+
+- (void)startAuttonomousMission
+{
+    WeakSelf(target);
+    NSArray<CLLocation *> *path2 = self.path;
+    [target generatePath:path2];
+}
+
+- (void)generatePath:(NSArray*) wayPoints {
+    WeakSelf(target);
+    
+    NSLog(@"Timeline: Number of points %d", wayPoints.count);
+    NSLog(@"Is Timeline Running: %d",[[DJISDKManager missionControl] isTimelineRunning]);
+    NSLog(@"Is Timeline Paused: %d",[[DJISDKManager missionControl] isTimelinePaused]);
+    
+    self.custom = [[MachineLearningAction alloc] initWithNumberOfImages:1];
+    
+    
+    //Setting up the waypoint mission
+    if (CLLocationCoordinate2DIsValid(target.aircraftLocation)) {
+        NSLog(@"Timeline: Location is Valid");
+    }
+    else{
+        NSLog(@"Timeline: Location is InValid");
+    }
+    //DJIMission *element = [self initializeSpotWaypointMovementTrial];
+    //NSError *error = [[DJISDKManager missionControl] scheduleElement:element];
+    NSError *error = nil;
+    
+    NSLog(@"Number of points is %d", self.path.count);
+    for(int i = 0; i < self.path.count; i++){
+        DJIMission *element = [self initializeSpotWaypointMovement:self.path[i]];
+        NSError *error = [[DJISDKManager missionControl] scheduleElement:element];
+        if(error != nil){
+            NSLog(@"Timeline: Error setting up waypoint mission: %@",error);
+        }
+        error = [[DJISDKManager missionControl] scheduleElement:self.custom];
+        if(error != nil){
+            NSLog(@"Timeline: Error setting up waypoint mission: %@",error);
+        }
+    }
+    
+    
+    //Starting the Timeline
+    __block int numEvents = 0;
+    [DJISDKManager.missionControl addListener:self toTimelineProgressWithBlock:^(DJIMissionControlTimelineEvent event, id<DJIMissionControlTimelineElement>  _Nullable element, NSError * _Nullable error, id  _Nullable info) {
+        if (event == DJIMissionControlTimelineEventStarted){
+            NSLog(@"Timeline: Event started");
+        }
+        if (event == DJIMissionControlTimelineEventFinished){
+            NSLog(@"Timeline: Event finished");
+            numEvents = numEvents + 1;
+            NSLog(@"Number of completed events in timeline: %d", numEvents);
+            if(numEvents%2 == 0){
+                int prediction = self.custom.label;
+                NSLog(@"Timeline: The Received Probability Prediction is %d", self.custom.label);
+                NSLog(@"Timeline Probability ------------------------------");
+                if(prediction == 0){
+                    [self.predictionButton setTitle:@"Fire" forState:UIControlStateNormal];
+                    self.predictionButton.backgroundColor = UIColor.redColor;
+                }
+                else if(prediction == 1){
+                    [self.predictionButton setTitle:@"Smoke" forState:UIControlStateNormal];
+                    self.predictionButton.backgroundColor = UIColor.grayColor;
+                }
+                else{
+                    [self.predictionButton setTitle:@"Spare" forState:UIControlStateNormal];
+                    self.predictionButton.backgroundColor = UIColor.greenColor;
+                }
+            }
+        }
+    }];
+    double delayInSeconds = 2.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [[DJISDKManager missionControl] startTimeline];
+        NSLog(@"Timeline has been started");
+        //NSLog(@"Timeline: is trigger active: %d",[trigger isActive]);
+        NSLog(@"Is Timeline Running: %d",[[DJISDKManager missionControl] isTimelineRunning]);
+        NSLog(@"Is Timeline Paused: %d",[[DJISDKManager missionControl] isTimelinePaused]);
+        NSLog(@"Timeline: Timeline is done");
+    });
+}
+
+- (DJIMission *) initializeSpotWaypointMovement: (CLLocation *) point
+{
+
+    DJIMutableWaypointMission *mission = [[DJIMutableWaypointMission alloc] init];
+    mission.maxFlightSpeed = 10.0;
+    mission.autoFlightSpeed = 4.0;
+    mission.rotateGimbalPitch = true;
+    mission.flightPathMode = DJIWaypointMissionFlightPathNormal;
+    double initialAltitude = self.height;
+
+    DJIWaypoint *wp1 = [[DJIWaypoint alloc] initWithCoordinate:point.coordinate];
+    wp1.altitude = initialAltitude;
+    NSLog(@"Debug %@", point);
+    NSLog(@"Timeline: Initialised Spot Waypoint Mission");
+    //NSLog(@"Initial timeline alrtitude = %0.02f", initialAltitude);
+    //NSLog(@"Initial timeline alrtitude = %s", point.coordinate);
+    DJIWaypointAction *action1 = [[DJIWaypointAction alloc] initWithActionType:DJIWaypointActionTypeRotateGimbalPitch param:0];
+    DJIWaypointAction *action2 = [[DJIWaypointAction alloc] initWithActionType:DJIWaypointActionTypeRotateGimbalPitch param:-90];
+    DJIWaypointAction *action3 = [[DJIWaypointAction alloc] initWithActionType:DJIWaypointActionTypeShootPhoto param:0];
+    DJIWaypointAction *action4 = [[DJIWaypointAction alloc] initWithActionType:DJIWaypointActionTypeRotateGimbalPitch param:0];
+    
+    [wp1 addAction:action1];
+    [wp1 addAction:action2];
+    [wp1 addAction:action3];
+    [wp1 addAction:action4];
+    
+    DJIWaypoint *wp2 = [[DJIWaypoint alloc] initWithCoordinate:point.coordinate];
+    wp2.altitude = initialAltitude + 1;
+    
+    DJIWaypoint *wp3 = [[DJIWaypoint alloc] initWithCoordinate:point.coordinate];
+    wp3.altitude = initialAltitude;
+
+
+    [mission addWaypoint:wp1];
+    [mission addWaypoint:wp2];
+    [mission addWaypoint:wp3];
+    [mission setFinishedAction:DJIWaypointMissionFinishedNoAction]; //Change the default action of Go Home to None
+    
+    NSLog(@"Rotate gimbal pitch: %d",[mission rotateGimbalPitch]);
+    
+    return mission;
+}
+
+- (IBAction)makeSinglePrediction:(id)sender {
+    WeakSelf(target);
+    
+    /*
+    [self someCameraStuff];
+    double delayInSeconds = 20.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        self.custom = [[MachineLearningAction alloc] initWithNumberOfImages:1];
+        [self.custom run];
+        
+        double delayInSeconds = 20.0;
+        dispatch_time_t popTime2 = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+        dispatch_after(popTime2, dispatch_get_main_queue(), ^(void){
+            
+            int prediction = target.custom.label;
+            NSLog(@"Timeline: The Received Probability Prediction is %d", target.custom.label);
+            NSLog(@"Timeline Probability ------------------------------");
+            if(prediction == 0){
+                [self.predictionButton setTitle:@"Fire" forState:UIControlStateNormal];
+                self.predictionButton.backgroundColor = UIColor.redColor;
+            }
+            else if(prediction == 1){
+                [self.predictionButton setTitle:@"Smoke" forState:UIControlStateNormal];
+                self.predictionButton.backgroundColor = UIColor.grayColor;
+            }
+            else{
+                [self.predictionButton setTitle:@"Spare" forState:UIControlStateNormal];
+                self.predictionButton.backgroundColor = UIColor.greenColor;
+            }
+            
+            
+        });
+        
+        
+        
+        
+        
+    });
+    */
+    
+    self.custom = [[MachineLearningAction alloc] initWithNumberOfImages:1];
+    [self.custom run];
+    double delayInSeconds = 30.0;
+    dispatch_time_t popTime2 = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+    dispatch_after(popTime2, dispatch_get_main_queue(), ^(void){
+        
+        int prediction = target.custom.label;
+        NSLog(@"Timeline: The Received Probability Prediction is %d", target.custom.label);
+        NSLog(@"Timeline Probability ------------------------------");
+        if(prediction == 0){
+            [self.predictionButton setTitle:@"Fire" forState:UIControlStateNormal];
+            self.predictionButton.backgroundColor = UIColor.redColor;
+        }
+        else if(prediction == 1){
+            [self.predictionButton setTitle:@"Smoke" forState:UIControlStateNormal];
+            self.predictionButton.backgroundColor = UIColor.grayColor;
+        }
+        else{
+            [self.predictionButton setTitle:@"Spare" forState:UIControlStateNormal];
+            self.predictionButton.backgroundColor = UIColor.greenColor;
+        }
+        
+        
+    });
+    
+    
+}
+
+
 
 @end
