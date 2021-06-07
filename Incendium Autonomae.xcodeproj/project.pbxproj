@@ -19,6 +19,7 @@
 		562D3A3C25A18AF300E2C834 /* WayPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 562D3A3B25A18AF300E2C834 /* WayPoint.m */; };
 		562D3A5025A18CB100E2C834 /* WaypointConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 562D3A4F25A18CB100E2C834 /* WaypointConfigViewController.m */; };
 		562D3A5B25A18D5C00E2C834 /* WaypointConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 562D3A5A25A18D5C00E2C834 /* WaypointConfigViewController.xib */; };
+		566ABAAB2645DF3A00ADC8E4 /* FIRE_DETECTION_Big.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 566ABAAA2645DF3A00ADC8E4 /* FIRE_DETECTION_Big.mlmodel */; };
 		5678401E2636993C00636C14 /* FIRE_DETECTION3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5678401D2636993C00636C14 /* FIRE_DETECTION3.mlmodel */; };
 		567CDA70259DBA500064148C /* WayPointController.m in Sources */ = {isa = PBXBuildFile; fileRef = 567CDA6F259DBA500064148C /* WayPointController.m */; };
 		56A63310259DFBD000324DC9 /* Waypoint.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56A63312259DFBD000324DC9 /* Waypoint.storyboard */; };
@@ -82,6 +83,7 @@
 		562D3A4625A18C9E00E2C834 /* WaypointConfigViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaypointConfigViewController.h; sourceTree = "<group>"; };
 		562D3A4F25A18CB100E2C834 /* WaypointConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaypointConfigViewController.m; sourceTree = "<group>"; };
 		562D3A5A25A18D5C00E2C834 /* WaypointConfigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaypointConfigViewController.xib; sourceTree = "<group>"; };
+		566ABAAA2645DF3A00ADC8E4 /* FIRE_DETECTION_Big.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FIRE_DETECTION_Big.mlmodel; sourceTree = "<group>"; };
 		5678401D2636993C00636C14 /* FIRE_DETECTION3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FIRE_DETECTION3.mlmodel; sourceTree = "<group>"; };
 		567CDA6E259DBA420064148C /* WayPointController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WayPointController.h; sourceTree = "<group>"; };
 		567CDA6F259DBA500064148C /* WayPointController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WayPointController.m; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				56E1735025B21EC000E8E21A /* FIRE_DETECTION.mlmodel */,
 				5678401D2636993C00636C14 /* FIRE_DETECTION3.mlmodel */,
 				56E1736825B2917700E8E21A /* FIRE_DETECTION2.mlmodel */,
+				566ABAAA2645DF3A00ADC8E4 /* FIRE_DETECTION_Big.mlmodel */,
 				56A9A1D92599E9D200C975A6 /* ViewController.h */,
 				56A9A1DA2599E9D200C975A6 /* ViewController.m */,
 				56A9A1DC2599E9D200C975A6 /* Main.storyboard */,
@@ -598,6 +601,7 @@
 			files = (
 				567CDA70259DBA500064148C /* WayPointController.m in Sources */,
 				561C486C25ABA38800C501DF /* TestingViewController.mm in Sources */,
+				566ABAAB2645DF3A00ADC8E4 /* FIRE_DETECTION_Big.mlmodel in Sources */,
 				5678401E2636993C00636C14 /* FIRE_DETECTION3.mlmodel in Sources */,
 				56D4E39E259BDA14001D6AB5 /* CameraController.m in Sources */,
 				56A9A1DB2599E9D200C975A6 /* ViewController.m in Sources */,

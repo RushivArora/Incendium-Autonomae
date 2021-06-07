@@ -8,14 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "FIRE_DETECTION2.h"
+#import "FIRE_DETECTION_Big.h"
 
 @interface TestingViewController : UIViewController
 
 @property (strong,nonatomic) NSMutableArray* imageArray;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView* activityIndicator;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
-@property (strong, nonatomic) IBOutlet FIRE_DETECTION2Input *input;
-@property (strong, nonatomic) IBOutlet FIRE_DETECTION2Output *output;
+@property (strong, nonatomic) IBOutlet FIRE_DETECTION_BigInput *input;
+@property (strong, nonatomic) IBOutlet FIRE_DETECTION_BigOutput *output;
 @property (strong, nonatomic) IBOutlet MLModel *model;
 
 @end

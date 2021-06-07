@@ -10,6 +10,7 @@
 #import <DJISDK/DJISDK.h>
 #import "FIRE_DETECTION2.h"
 #import "FIRE_DETECTION3.h"
+#import "FIRE_DETECTION_Big.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -56,8 +57,8 @@ typedef NS_ENUM(NSInteger, AircraftActionError) {
 @property(nonatomic, readonly) int numImages;
 @property(nonatomic, readwrite) int label;
 @property (strong,nonatomic) NSMutableArray * imageArray;
-@property (strong, nonatomic) IBOutlet FIRE_DETECTION3Input *input;
-@property (strong, nonatomic) IBOutlet FIRE_DETECTION3Output *output;
+@property (strong, nonatomic) IBOutlet FIRE_DETECTION_BigInput *input;
+@property (strong, nonatomic) IBOutlet FIRE_DETECTION_BigOutput *output;
 @property (strong, nonatomic) IBOutlet MLModel *model;
 
 /**

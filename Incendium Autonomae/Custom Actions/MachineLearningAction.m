@@ -194,10 +194,10 @@
     NSLog(@"Timeline: Width: %0.2f, Height: %0.2f", width, height);
     
     NSError *error;
-    weakSelf.model = [[[FIRE_DETECTION3 alloc] init] model];
-    weakSelf.input = [[FIRE_DETECTION3Input alloc] initWithMy_inputFromCGImage:myIcon.CGImage error:&error];
+    weakSelf.model = [[[FIRE_DETECTION_Big alloc] init] model];
+    weakSelf.input = [[FIRE_DETECTION_BigInput alloc] initWithMy_inputFromCGImage:myIcon.CGImage error:&error];
     NSLog(@"Timeline: Input Error Message for ML model: %@",error);
-    weakSelf.output = ((FIRE_DETECTION3Output *)[weakSelf.model predictionFromFeatures:weakSelf.input error:&error]);
+    weakSelf.output = ((FIRE_DETECTION_BigOutput *)[weakSelf.model predictionFromFeatures:weakSelf.input error:&error]);
     NSLog(@"Timeline: Output Error Message for ML model: %@",error);
     if (_output == nil){
         NSLog(@"Timeline: nil output from ML model");

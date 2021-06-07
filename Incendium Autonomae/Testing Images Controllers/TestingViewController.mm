@@ -10,6 +10,7 @@
 #import "FIRE_DETECTION2.h"
 #import <CoreML/CoreML.h>
 #import <Vision/Vision.h>
+#import "FIRE_DETECTION_Big.h"
 
 @implementation TestingViewController
 
@@ -38,10 +39,10 @@
     NSLog(@"Done showing downloaded image");
     
     NSError *error;
-    weakSelf.model = [[[FIRE_DETECTION2 alloc] init] model];
-    weakSelf.input = [[FIRE_DETECTION2Input alloc] initWithMy_inputFromCGImage:myIcon.CGImage error:&error];
+    weakSelf.model = [[[FIRE_DETECTION_Big alloc] init] model];
+    weakSelf.input = [[FIRE_DETECTION_BigInput alloc] initWithMy_inputFromCGImage:myIcon.CGImage error:&error];
     //NSLog(@"Input Error Message: %@",error);
-    weakSelf.output = ((FIRE_DETECTION2Output *)[weakSelf.model predictionFromFeatures:weakSelf.input error:&error]);
+    weakSelf.output = ((FIRE_DETECTION_BigOutput *)[weakSelf.model predictionFromFeatures:weakSelf.input error:&error]);
     //NSLog(@"Output Error Message: %@",error);
     if (_output == nil){
         NSLog(@"nil output");

@@ -15,6 +15,7 @@
 #import "MachineLearningAction.h"
 #import "WayPointController.h"
 #import "Autonomous_Utiliy.h"
+#import "FIRE_DETECTION_Big.h"
 
 #define PHOTO_NUMBER 1
 #define ROTATE_ANGLE 45
@@ -648,7 +649,7 @@
     VNCoreMLRequest *request;
     MLModel *model;
     
-    model = [[[FIRE_DETECTION alloc] init] model];
+    model = [[[FIRE_DETECTION_Big alloc] init] model];
                 
     m = [VNCoreMLModel modelForMLModel: model error:nil];
     request = [[VNCoreMLRequest alloc] initWithModel: m completionHandler: (VNRequestCompletionHandler) ^(VNRequest *request, NSError *error){
@@ -1195,7 +1196,7 @@
     
     self.custom = [[MachineLearningAction alloc] initWithNumberOfImages:1];
     [self.custom run];
-    double delayInSeconds = 30.0;
+    double delayInSeconds = 10.0;
     dispatch_time_t popTime2 = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
     dispatch_after(popTime2, dispatch_get_main_queue(), ^(void){
         
